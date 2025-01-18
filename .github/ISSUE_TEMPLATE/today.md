@@ -1,5 +1,5 @@
 ---
-name: '250'
+name: today
 about: 2025 today
 title: ''
 labels: ''
