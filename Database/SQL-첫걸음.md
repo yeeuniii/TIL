@@ -8,15 +8,17 @@
 데이터베이스를 효율적으로 관리하는 시스템
 
 > 왜 필요한가?
-1. 생산성
-   - 가장 기본적인 데이터 처리, CRUD를 DBMS가 제공함
-![image](https://github.com/user-attachments/assets/99a70ab8-516d-4f15-bf1d-e7cb6c7d16de)
-2. 기능성
-![image](https://github.com/user-attachments/assets/205e4748-37f3-43f7-bccc-31da3edc219f)
-3. 신뢰성
-   - 대규모 데이터베이스의 경우, 여러 대의 하드웨어를 구성하여 신뢰성을 높임 + 성능 향상
+1. 생산성<br>
+가장 기본적인 데이터 처리, CRUD를 DBMS가 제공함<br>
+<img src="https://github.com/user-attachments/assets/99a70ab8-516d-4f15-bf1d-e7cb6c7d16de" style="width: 400px; height: 200px;">
+1. 기능성<br>
+
+   <img src="https://github.com/user-attachments/assets/205e4748-37f3-43f7-bccc-31da3edc219f" style="width: 400px; height: 200px;">
+1. 신뢰성<br>
+대규모 데이터베이스의 경우, 여러 대의 하드웨어를 구성하여 신뢰성을 높임 + 성능 향상
    > 일부 DBMS는 컴퓨터를 여러 대 두고, 소프트웨어를 통해 확장성(Scalability)과 부하 분산(Load Balancing)을 구현함.<br> 이를 보통 ‘클러스터 구성’ 또는 ‘스케일 아웃’이라 부름.
-   - export, import 를 통한 간단한 백업 가능
+   
+   export, import 를 통한 간단한 백업 가능
 
 #### SQL
 - RDBMS의 데이터를 관리하기 위한 언어
@@ -64,3 +66,68 @@
    - 임베디드 시스템에 자주 사용됨. 
    - 매우 작음. 경량화
 
+---
+
+### 3강. 데이터베이스 서버
+#### RDBMS의 클라이언트/서버
+- RDBMS는사용자 별로 데이터베이스 접근을 제한할 수 있기 때문에, 사용자 인증이 필요함
+  - 사용자 ID와 비밀번호로 실행<br>
+
+   <img src="https://github.com/user-attachments/assets/b9700caf-50e3-44c7-9d82-2b4b04ab3837" style="width: 400px; height: 200px;">
+
+<br>
+
+- 루프 백 접속
+  - 클라이언트에섯 서버에 접속 시, 네트워크를 경유해서 PC의 서버로 되돌아오는 형태
+  - PC 한 대로 클라이언트와 서버 모두 실행할 수 있지만 네트워크 기능 필요. 
+  
+  <img src="https://github.com/user-attachments/assets/d7998387-d418-4dc9-a6e4-6452e9eb90df" style="width: 400px; height: 200px;">
+
+---
+
+## [2장 - 테이블에서 데이터 검색]
+#### 검색
+  ```SQL
+  SELECT * FROM 테이블명;
+  ```
+
+> 예약어와 데이터베이스 객체명은 대소문자를 구별하지 않는다.
+
+<img src="https://github.com/user-attachments/assets/2093ddfd-1706-4267-a46d-86a550c56b3f" style="width: 400px; height: 200px;">
+
+<br>
+
+#### 테이블 구조 참조하기
+  - MySQL
+    ```
+    DESC 테이블명;
+    ```
+  - postgreSQL
+    ```
+    \d 테이블명;
+    ```
+
+#### 자료형
+1. INTEGER 형<br>
+   정수값을 저장할 수 있는 자료형.
+2. CHAR 형<br>
+   문자열을 저장할 수 있는 자료형.<br>
+   언제나 고정된 길이로 데이터가 저장. 즉, 고정 길이 문자열
+   따라서 최대 길이보다 작은 문자열 저장 시, 공백 문자로 나머지를 채운 후 저장하게 됨.
+3. VARCHAR 형<br>
+   문자열을 저장할 수 있는 자료형.<br>
+   데이터 크기에 맞춰 저장공간의 크기 변경됨. 가변 길이 문자열
+4. DATE 형<br>
+   날짜값을 저장할 수 있는 자료형
+5. TIME 형<br>
+   시간을 저장할 수 있는 자료형
+<img src="https://github.com/user-attachments/assets/46c5c2f0-a8ee-436c-8bf6-485a31af8c86" style="width: 300px; height: 180px;">
+
+<br>
+
+#### 검색 조건 지정하기
+  ```SQL
+  SELECT * FROM 테이블명 WHERE 조건식;
+  ```
+  - 열 선택은 SELECT 구
+  - 행 선택은 WHERE 구
