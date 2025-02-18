@@ -121,6 +121,7 @@
    날짜값을 저장할 수 있는 자료형
 5. TIME 형<br>
    시간을 저장할 수 있는 자료형
+
 <img src="https://github.com/user-attachments/assets/46c5c2f0-a8ee-436c-8bf6-485a31af8c86" style="width: 300px; height: 180px;">
 
 <br>
