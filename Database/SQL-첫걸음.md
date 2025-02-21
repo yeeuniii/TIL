@@ -8,9 +8,8 @@
 
 **> 왜 필요한가?**
 1. **생산성**<br>
-가장 기본적인 데이터 처리나 CRUD를 DBMS가 제공한다. 
-<br>
-<img src="assets/book-sql-first-step/1-6.jpeg" style="width: 400px; height: 200px;">
+가장 기본적인 데이터 처리나 CRUD를 DBMS가 제공한다.<br>
+   <img src="assets/book-sql-first-step/1-6.jpeg" style="width: 400px; height: 200px;">
 
 1. **기능성**<br>
 복수의 사용자의 요청에 대응하거나, 대용량의 데이터를 저장하고 고속으로 검색하는 기능을 제공한다. 또한 데이터베이스 관리 기능을 유저가 확장할 수도 있어 유연한 개발이 가능하다. 이와 같은 데이터베이스를 다루는 여러 가지 기능을 DBMS가 제공한다.<br>
@@ -76,8 +75,6 @@
 RDBMS는사용자 별로 데이터베이스 접근을 제한할 수 있기 때문에, 사용자 인증이 필요하다. 일반적으로 사용자 ID와 비밀번호로 인증한다.
 
 <img src="assets/book-sql-first-step/1-23.jpeg" style="width: 400px; height: 200px;">
-
-<br>
 
 #### 루프 백 접속
 클라이언트에서 서버에 접속 시, 네트워크를 경유해서 PC의 서버로 되돌아오는 형태이다. PC 한 대로 클라이언트와 서버 모두 실행할 수 있지만 네트워크 기능이 필요하다.
