@@ -2,40 +2,41 @@
 
 <!-- TOC -->
 
-- [SQL 첫걸음](#sql-%EC%B2%AB%EA%B1%B8%EC%9D%8C)
-	- [[1장 - 데이터베이스와 SQL]](#1%EC%9E%A5---%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%99%80-sql)
-		- [데이터베이스](#%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4)
-			- [데이터베이스 관리 시스템DBMS; Database Management System](#%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EA%B4%80%EB%A6%AC-%EC%8B%9C%EC%8A%A4%ED%85%9Cdbms-database-management-system)
-			- [SQL](#sql)
-		- [다양한 데이터베이스](#%EB%8B%A4%EC%96%91%ED%95%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4)
-			- [관계형 데이터베이스 RDB; Relational Database](#%EA%B4%80%EA%B3%84%ED%98%95-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-rdb-relational-database)
-			- [데이터베이스 종류](#%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%A2%85%EB%A5%98)
-			- [RDBMS 종류](#rdbms-%EC%A2%85%EB%A5%98)
-		- [데이터베이스 서버](#%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%84%9C%EB%B2%84)
-			- [RDBMS의 클라이언트/서버](#rdbms%EC%9D%98-%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8%EC%84%9C%EB%B2%84)
-			- [루프 백 접속](#%EB%A3%A8%ED%94%84-%EB%B0%B1-%EC%A0%91%EC%86%8D)
-	- [[2장 - 테이블에서 데이터 검색]](#2%EC%9E%A5---%ED%85%8C%EC%9D%B4%EB%B8%94%EC%97%90%EC%84%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EA%B2%80%EC%83%89)
-		- [검색](#%EA%B2%80%EC%83%89)
-			- [테이블 구조 참조하기](#%ED%85%8C%EC%9D%B4%EB%B8%94-%EA%B5%AC%EC%A1%B0-%EC%B0%B8%EC%A1%B0%ED%95%98%EA%B8%B0)
-			- [자료형](#%EC%9E%90%EB%A3%8C%ED%98%95)
-		- [검색 조건 지정하기](#%EA%B2%80%EC%83%89-%EC%A1%B0%EA%B1%B4-%EC%A7%80%EC%A0%95%ED%95%98%EA%B8%B0)
-		- [패턴 매칭에 의한 검색](#%ED%8C%A8%ED%84%B4-%EB%A7%A4%EC%B9%AD%EC%97%90-%EC%9D%98%ED%95%9C-%EA%B2%80%EC%83%89)
-			- [패턴 매칭 / 부분 검색](#%ED%8C%A8%ED%84%B4-%EB%A7%A4%EC%B9%AD--%EB%B6%80%EB%B6%84-%EA%B2%80%EC%83%89)
-	- [[3장 - 정렬과 연산]](#3%EC%9E%A5---%EC%A0%95%EB%A0%AC%EA%B3%BC-%EC%97%B0%EC%82%B0)
-		- [정렬](#%EC%A0%95%EB%A0%AC)
-			- [사전식 순서에서 주의할 점](#%EC%82%AC%EC%A0%84%EC%8B%9D-%EC%88%9C%EC%84%9C%EC%97%90%EC%84%9C-%EC%A3%BC%EC%9D%98%ED%95%A0-%EC%A0%90)
-			- [복수의 열을 지정해서 정렬하기](#%EB%B3%B5%EC%88%98%EC%9D%98-%EC%97%B4%EC%9D%84-%EC%A7%80%EC%A0%95%ED%95%B4%EC%84%9C-%EC%A0%95%EB%A0%AC%ED%95%98%EA%B8%B0)
-		- [결과 행 제한하기](#%EA%B2%B0%EA%B3%BC-%ED%96%89-%EC%A0%9C%ED%95%9C%ED%95%98%EA%B8%B0)
-			- [오프셋 지정](#%EC%98%A4%ED%94%84%EC%85%8B-%EC%A7%80%EC%A0%95)
-		- [수치 연산](#%EC%88%98%EC%B9%98-%EC%97%B0%EC%82%B0)
-			- [사칙연산](#%EC%82%AC%EC%B9%99%EC%97%B0%EC%82%B0)
-			- [반올림함수: ROUND](#%EB%B0%98%EC%98%AC%EB%A6%BC%ED%95%A8%EC%88%98-round)
-		- [문자열 연산](#%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%97%B0%EC%82%B0)
-			- [문자열 결합](#%EB%AC%B8%EC%9E%90%EC%97%B4-%EA%B2%B0%ED%95%A9)
-			- [SUBSTRING](#substring)
-			- [TRIM](#trim)
-			- [CHARACTER_LENGTH](#character_length)
+- [[1장 - 데이터베이스와 SQL]](#1%EC%9E%A5---%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%99%80-sql)
+	- [데이터베이스](#%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4)
+		- [데이터베이스 관리 시스템DBMS; Database Management System](#%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EA%B4%80%EB%A6%AC-%EC%8B%9C%EC%8A%A4%ED%85%9Cdbms-database-management-system)
+		- [SQL](#sql)
+	- [다양한 데이터베이스](#%EB%8B%A4%EC%96%91%ED%95%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4)
+		- [관계형 데이터베이스 RDB; Relational Database](#%EA%B4%80%EA%B3%84%ED%98%95-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-rdb-relational-database)
+		- [데이터베이스 종류](#%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%A2%85%EB%A5%98)
+		- [RDBMS 종류](#rdbms-%EC%A2%85%EB%A5%98)
+	- [데이터베이스 서버](#%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%84%9C%EB%B2%84)
+		- [RDBMS의 클라이언트/서버](#rdbms%EC%9D%98-%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8%EC%84%9C%EB%B2%84)
+		- [루프 백 접속](#%EB%A3%A8%ED%94%84-%EB%B0%B1-%EC%A0%91%EC%86%8D)
+- [[2장 - 테이블에서 데이터 검색]](#2%EC%9E%A5---%ED%85%8C%EC%9D%B4%EB%B8%94%EC%97%90%EC%84%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EA%B2%80%EC%83%89)
+	- [검색](#%EA%B2%80%EC%83%89)
+		- [테이블 구조 참조하기](#%ED%85%8C%EC%9D%B4%EB%B8%94-%EA%B5%AC%EC%A1%B0-%EC%B0%B8%EC%A1%B0%ED%95%98%EA%B8%B0)
+		- [자료형](#%EC%9E%90%EB%A3%8C%ED%98%95)
+	- [검색 조건 지정하기](#%EA%B2%80%EC%83%89-%EC%A1%B0%EA%B1%B4-%EC%A7%80%EC%A0%95%ED%95%98%EA%B8%B0)
+	- [패턴 매칭에 의한 검색](#%ED%8C%A8%ED%84%B4-%EB%A7%A4%EC%B9%AD%EC%97%90-%EC%9D%98%ED%95%9C-%EA%B2%80%EC%83%89)
+		- [패턴 매칭 / 부분 검색](#%ED%8C%A8%ED%84%B4-%EB%A7%A4%EC%B9%AD--%EB%B6%80%EB%B6%84-%EA%B2%80%EC%83%89)
+- [[3장 - 정렬과 연산]](#3%EC%9E%A5---%EC%A0%95%EB%A0%AC%EA%B3%BC-%EC%97%B0%EC%82%B0)
+	- [정렬](#%EC%A0%95%EB%A0%AC)
+		- [사전식 순서에서 주의할 점](#%EC%82%AC%EC%A0%84%EC%8B%9D-%EC%88%9C%EC%84%9C%EC%97%90%EC%84%9C-%EC%A3%BC%EC%9D%98%ED%95%A0-%EC%A0%90)
+		- [복수의 열을 지정해서 정렬하기](#%EB%B3%B5%EC%88%98%EC%9D%98-%EC%97%B4%EC%9D%84-%EC%A7%80%EC%A0%95%ED%95%B4%EC%84%9C-%EC%A0%95%EB%A0%AC%ED%95%98%EA%B8%B0)
+	- [결과 행 제한하기](#%EA%B2%B0%EA%B3%BC-%ED%96%89-%EC%A0%9C%ED%95%9C%ED%95%98%EA%B8%B0)
+		- [오프셋 지정](#%EC%98%A4%ED%94%84%EC%85%8B-%EC%A7%80%EC%A0%95)
+	- [수치 연산](#%EC%88%98%EC%B9%98-%EC%97%B0%EC%82%B0)
+		- [사칙연산](#%EC%82%AC%EC%B9%99%EC%97%B0%EC%82%B0)
+		- [반올림함수: ROUND](#%EB%B0%98%EC%98%AC%EB%A6%BC%ED%95%A8%EC%88%98-round)
+	- [문자열 연산](#%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%97%B0%EC%82%B0)
+		- [문자열 결합](#%EB%AC%B8%EC%9E%90%EC%97%B4-%EA%B2%B0%ED%95%A9)
+		- [SUBSTRING](#substring)
+		- [TRIM](#trim)
+		- [CHARACTER_LENGTH](#character_length)
+	- [날짜 연산](#%EB%82%A0%EC%A7%9C-%EC%97%B0%EC%82%B0)
 
+<!-- /TOC -->
 <!-- /TOC -->
 
 
@@ -335,8 +336,16 @@ SELECT *, price*quantity AS amount FROM sample;
 #### 반올림함수: ROUND()
 `ROUND(값, 반올림 자릿수)`<br>
 반올림 자릿수를 입력하지 않으면 기본적으로 소수점 첫째 자리를 기준으로 반올림한다. 즉, 0으로 간주된다.
-  
-  <img src="assets/book-sql-first-step/3-13.jpeg" style="width: 400px; height: 140px;">
+
+```SQL
+mysql> SELECT  ROUND(123.456, -1),  ROUND(123.456, 0),  ROUND(123.456, 1);
++--------------------+-------------------+-------------------+
+| ROUND(123.456, -1) | ROUND(123.456, 0) | ROUND(123.456, 1) |
++--------------------+-------------------+-------------------+
+|                120 |               123 |             123.5 |
++--------------------+-------------------+-------------------+
+```
+
 
 반올림 외에 버림을 하고 싶은 경우에는 `TRUNCATE()` 함수로 계산할 수 있다.
 
@@ -454,6 +463,8 @@ mysql> SELECT DATE_FORMAT(CURRENT_TIMESTAMP, '%Y %M %D');
    ```
 
 `DATEDIFF()` 함수로 날짜형 간의 뺼셈도 할 수 있다.
+
+<br>
 
 > **날짜 및 시간 함수 공식 문서**<br>
 > [MySQL](https://dev.mysql.com/doc/refman/8.4/en/date-and-time-functions.html#function_date)
