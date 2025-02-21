@@ -2,30 +2,39 @@
 
 <!-- TOC -->
 
-- [[1장 - 데이터베이스와 SQL]](#1%EC%9E%A5---%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%99%80-sql)
-   - [데이터베이스](#%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4)
-      - [데이터베이스 관리 시스템DBMS; Database Management System](#%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EA%B4%80%EB%A6%AC-%EC%8B%9C%EC%8A%A4%ED%85%9Cdbms-database-management-system)
-      - [SQL](#sql)
-   - [다양한 데이터베이스](#%EB%8B%A4%EC%96%91%ED%95%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4)
-      - [관계형 데이터베이스 RDB; Relational Database](#%EA%B4%80%EA%B3%84%ED%98%95-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-rdb-relational-database)
-      - [데이터베이스 종류](#%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%A2%85%EB%A5%98)
-      - [RDBMS 종류](#rdbms-%EC%A2%85%EB%A5%98)
-   - [데이터베이스 서버](#%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%84%9C%EB%B2%84)
-      - [RDBMS의 클라이언트/서버](#rdbms%EC%9D%98-%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8%EC%84%9C%EB%B2%84)
-      - [루프 백 접속](#%EB%A3%A8%ED%94%84-%EB%B0%B1-%EC%A0%91%EC%86%8D)
-- [[2장 - 테이블에서 데이터 검색]](#2%EC%9E%A5---%ED%85%8C%EC%9D%B4%EB%B8%94%EC%97%90%EC%84%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EA%B2%80%EC%83%89)
-   - [검색](#%EA%B2%80%EC%83%89)
-      - [테이블 구조 참조하기](#%ED%85%8C%EC%9D%B4%EB%B8%94-%EA%B5%AC%EC%A1%B0-%EC%B0%B8%EC%A1%B0%ED%95%98%EA%B8%B0)
-      - [자료형](#%EC%9E%90%EB%A3%8C%ED%98%95)
-   - [검색 조건 지정하기](#%EA%B2%80%EC%83%89-%EC%A1%B0%EA%B1%B4-%EC%A7%80%EC%A0%95%ED%95%98%EA%B8%B0)
-   - [패턴 매칭에 의한 검색](#%ED%8C%A8%ED%84%B4-%EB%A7%A4%EC%B9%AD%EC%97%90-%EC%9D%98%ED%95%9C-%EA%B2%80%EC%83%89)
-      - [패턴 매칭 / 부분 검색](#%ED%8C%A8%ED%84%B4-%EB%A7%A4%EC%B9%AD--%EB%B6%80%EB%B6%84-%EA%B2%80%EC%83%89)
-- [[3장 - 정렬과 연산]](#3%EC%9E%A5---%EC%A0%95%EB%A0%AC%EA%B3%BC-%EC%97%B0%EC%82%B0)
-   - [정렬](#%EC%A0%95%EB%A0%AC)
-      - [사전식 순서에서 주의할 점](#%EC%82%AC%EC%A0%84%EC%8B%9D-%EC%88%9C%EC%84%9C%EC%97%90%EC%84%9C-%EC%A3%BC%EC%9D%98%ED%95%A0-%EC%A0%90)
-      - [복수의 열을 지정해서 정렬하기](#%EB%B3%B5%EC%88%98%EC%9D%98-%EC%97%B4%EC%9D%84-%EC%A7%80%EC%A0%95%ED%95%B4%EC%84%9C-%EC%A0%95%EB%A0%AC%ED%95%98%EA%B8%B0)
-   - [결과 행 제한하기](#%EA%B2%B0%EA%B3%BC-%ED%96%89-%EC%A0%9C%ED%95%9C%ED%95%98%EA%B8%B0)
-      - [오프셋 지정](#%EC%98%A4%ED%94%84%EC%85%8B-%EC%A7%80%EC%A0%95)
+- [SQL 첫걸음](#sql-%EC%B2%AB%EA%B1%B8%EC%9D%8C)
+	- [[1장 - 데이터베이스와 SQL]](#1%EC%9E%A5---%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%99%80-sql)
+		- [데이터베이스](#%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4)
+			- [데이터베이스 관리 시스템DBMS; Database Management System](#%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EA%B4%80%EB%A6%AC-%EC%8B%9C%EC%8A%A4%ED%85%9Cdbms-database-management-system)
+			- [SQL](#sql)
+		- [다양한 데이터베이스](#%EB%8B%A4%EC%96%91%ED%95%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4)
+			- [관계형 데이터베이스 RDB; Relational Database](#%EA%B4%80%EA%B3%84%ED%98%95-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-rdb-relational-database)
+			- [데이터베이스 종류](#%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%A2%85%EB%A5%98)
+			- [RDBMS 종류](#rdbms-%EC%A2%85%EB%A5%98)
+		- [데이터베이스 서버](#%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%84%9C%EB%B2%84)
+			- [RDBMS의 클라이언트/서버](#rdbms%EC%9D%98-%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8%EC%84%9C%EB%B2%84)
+			- [루프 백 접속](#%EB%A3%A8%ED%94%84-%EB%B0%B1-%EC%A0%91%EC%86%8D)
+	- [[2장 - 테이블에서 데이터 검색]](#2%EC%9E%A5---%ED%85%8C%EC%9D%B4%EB%B8%94%EC%97%90%EC%84%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EA%B2%80%EC%83%89)
+		- [검색](#%EA%B2%80%EC%83%89)
+			- [테이블 구조 참조하기](#%ED%85%8C%EC%9D%B4%EB%B8%94-%EA%B5%AC%EC%A1%B0-%EC%B0%B8%EC%A1%B0%ED%95%98%EA%B8%B0)
+			- [자료형](#%EC%9E%90%EB%A3%8C%ED%98%95)
+		- [검색 조건 지정하기](#%EA%B2%80%EC%83%89-%EC%A1%B0%EA%B1%B4-%EC%A7%80%EC%A0%95%ED%95%98%EA%B8%B0)
+		- [패턴 매칭에 의한 검색](#%ED%8C%A8%ED%84%B4-%EB%A7%A4%EC%B9%AD%EC%97%90-%EC%9D%98%ED%95%9C-%EA%B2%80%EC%83%89)
+			- [패턴 매칭 / 부분 검색](#%ED%8C%A8%ED%84%B4-%EB%A7%A4%EC%B9%AD--%EB%B6%80%EB%B6%84-%EA%B2%80%EC%83%89)
+	- [[3장 - 정렬과 연산]](#3%EC%9E%A5---%EC%A0%95%EB%A0%AC%EA%B3%BC-%EC%97%B0%EC%82%B0)
+		- [정렬](#%EC%A0%95%EB%A0%AC)
+			- [사전식 순서에서 주의할 점](#%EC%82%AC%EC%A0%84%EC%8B%9D-%EC%88%9C%EC%84%9C%EC%97%90%EC%84%9C-%EC%A3%BC%EC%9D%98%ED%95%A0-%EC%A0%90)
+			- [복수의 열을 지정해서 정렬하기](#%EB%B3%B5%EC%88%98%EC%9D%98-%EC%97%B4%EC%9D%84-%EC%A7%80%EC%A0%95%ED%95%B4%EC%84%9C-%EC%A0%95%EB%A0%AC%ED%95%98%EA%B8%B0)
+		- [결과 행 제한하기](#%EA%B2%B0%EA%B3%BC-%ED%96%89-%EC%A0%9C%ED%95%9C%ED%95%98%EA%B8%B0)
+			- [오프셋 지정](#%EC%98%A4%ED%94%84%EC%85%8B-%EC%A7%80%EC%A0%95)
+		- [수치 연산](#%EC%88%98%EC%B9%98-%EC%97%B0%EC%82%B0)
+			- [사칙연산](#%EC%82%AC%EC%B9%99%EC%97%B0%EC%82%B0)
+			- [반올림함수: ROUND](#%EB%B0%98%EC%98%AC%EB%A6%BC%ED%95%A8%EC%88%98-round)
+		- [문자열 연산](#%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%97%B0%EC%82%B0)
+			- [문자열 결합](#%EB%AC%B8%EC%9E%90%EC%97%B4-%EA%B2%B0%ED%95%A9)
+			- [SUBSTRING](#substring)
+			- [TRIM](#trim)
+			- [CHARACTER_LENGTH](#character_length)
 
 <!-- /TOC -->
 
@@ -294,3 +303,159 @@ SQL Server은 `TOP`을, Oracle은 `ROWNUM`이라는 열을 사용해 행을 제�
 <img src="assets/book-sql-first-step/3-pagination.jpeg" style="width: 200px; height:400px;">
 
 몇번째 행부터 `LIMIT` 행 수만큼 출력할 것인지를 나타낼 때, `OFFSET`으로 몇번째 행부터를 나타낸다. `OFFSET`은 생략 가능하며 기본값은 0이다.
+
+---
+
+### 수치 연산
+#### 사칙연산
+| 연산자 | 연산 |
+| --- | --- |
+| + | 덧셈 |
+| - | 뺄셈 |
+| * | 곱셉 |
+| / | 나눗셈 |
+| % | 나머지 |
+
+`SELECT` 구나, `WHERE` 구, `ORDER BY` 구에서 연산할 수 있다. 이때 `SELECT` 구에서 지정한 별칭을 `WHERE` 구에서는 사용할 수 없지만, `ORDER BY` 구에서는 사용할 수 있다. 그 이유는 보통 데이터베이스 서버에서 `WHERE` 구 ➡️ `SELECT` 구 ➡️ `ORDER BY` 구 순서로 내부처리를 진행하기 때문이다.
+
+열의 별명은 예약어 `AS`를 사용해 지정한다. 키워드 `AS`는 생략해도 괜찮다.
+```sql
+SELECT *, price*quantity AS amount FROM sample;
+```
+
+
+명령구문을 분석할 때
+더블쿼트(“”)로 둘러싸면 데이터베이스 객체의 이름으로 간주하고, 
+싱글쿼트(‘’)로 둘러싸는 것은 문자열 상수이다.
+더블쿼트로 둘러싸서 지정할 경우, 예약어와 같은 이름을 지정할 수 있다.
+
+또한 연산에 `NULL`이 포함되면 결과는 항상 `NULL`이다.
+
+
+#### 반올림함수: ROUND()
+`ROUND(값, 반올림 자릿수)`<br>
+반올림 자릿수를 입력하지 않으면 기본적으로 소수점 첫째 자리를 기준으로 반올림한다. 즉, 0으로 간주된다.
+  
+  <img src="assets/book-sql-first-step/3-13.jpeg" style="width: 400px; height: 140px;">
+
+반올림 외에 버림을 하고 싶은 경우에는 `TRUNCATE()` 함수로 계산할 수 있다.
+
+> **DECIMAL 형**<br>
+> 정수부와 소수부의 자릿수를 지정할 수 있는 자료형. 
+> 즉, 소수점을 포함하는 수치를 저장하는 자료형
+
+그 외에도 삼각함수 `SIN`, `COS`, 루트를 계산하는 `SQRT`, 대수를 계산하는 `LOG` 등수많은 함수가 있다.
+
+---
+
+### 문자열 연산
+#### 문자열 결합
+2개의 열 데이터를 모아서 1개의 열로 처리할 때 사용한다.
+
+| 연산자 / 함수 | 데이터베이스 |
+| --- | --- |
+| + | SQL Server |
+| \|\| | Oracle, DB2, PostgreSQL |
+| CONCAT | MySQL |
+
+#### SUBSTRING()
+`SUBSTRING(값, 시작 위치, 추출 문자 개수)`<br>
+문자열의 일부분을 계산해서 반환해주는 함수로, 데이터베이스에 따라서 함수명 SUBSTR인 경우도 있다.
+
+#### TRIM()
+`TRIM(값, 제거 문자)`<br>
+문자열의 앞뒤로 여분의 스페이스가 있는 경우 이를 제거해주는 함수로, 문자열 중간에 존재하는 스페이스는 제거되지 않는다.  제거 문자 지정 시, 스페이스 이외의 문자를 제거할 수 있다.
+
+CHAR 형(고정길이 문자열형)은 문자열의 길이가 고정되고 남은 공간은 스페이스로 채워지기 때문에, 빈 공간을 채우기 위해 사용한 스페이스를 제거하기 위해 많이 사용된다.
+
+#### CHARACTER_LENGTH()<br>
+문자열의 길이를 반환하는 함수. CHAR_LENGTH로 줄여서 사용해도 된다.
+`OCTET_LENGTH()` 는 문자열의 길이를 바이트 단위로 반환하는 함수이다.
+
+> **문자세트(character set)**<br>
+> 문자와 그 문자의 인코딩의 집합<br>
+> character set에 따라서 한 문자가 몇 바이트인지는 다를 수 있다. 따라서 문자열 데이터의 길이는 character set에 따라 다르다.
+> 
+> <img src="assets/book-sql-first-step/3-4-table.jpeg" style="width: 400px; height: 120px;">
+
+---
+
+### 날짜 연산
+
+사칙 연산이 가능하다.<br>
+날짜시간 데이터를 연산하면 결괏값으로 날짜시간 유형의 데이터를 반환하는 경우도 있으며, 기간(간격)의, 차를 나타내는 기간형(interval) 데이터를 반환하는 경우도 있다. 
+
+**시스템 날짜**<br>
+하드웨어 상의 시계로부터 실시간으로 얻을 수 있는 일시적인 데이터
+
+표준 SQL에서는 `CURRENT_TIMESTAMP`, `CURRENT_DATE`, `CURRENT_TIME`을 지원한다.
+
+```sql
+mysql> SELECT CURRENT_TIMESTAMP;
++---------------------+
+| CURRENT_TIMESTAMP   |
++---------------------+
+| 2025-02-21 17:09:17 |
++---------------------+
+```
+
+```sql
+mysql> SELECT CURRENT_DATE;
++--------------+
+| CURRENT_DATE |
++--------------+
+| 2025-02-21   |
++--------------+
+```
+
+```sql
+mysql> SELECT CURRENT_TIME;
++--------------+
+| CURRENT_TIME |
++--------------+
+| 17:09:44     |
++--------------+
+```
+
+<br>
+
+Oracle의 경우 `TO_DATE(문자열 데이터, 날짜 서식)` 함수를 사용하여 문자열 데이터를 날짜 서식에 맞게 날짜형 데이터로 변환할 수 있다. 반대로 `TO_CHAR()` 함수를 사용하여 날짜형 데이터를 서식에 맞게 변환해 문자열 데이터로 출력할 수 있다.
+[MySQL](https://dev.mysql.com/doc/refman/8.4/en/date-and-time-functions.html#function_date-format)의 경우, `DATE_FORMAT()` 함수를, [PostgreSQL](https://www.postgresql.org/docs/current/functions-formatting.html)은 `TO_DATE`, `TO_TIMESTAMP` 함수를 제공한다.
+
+```sql
+mysql> SELECT DATE_FORMAT(CURRENT_TIMESTAMP, '%Y %M %D');
++--------------------------------------------+
+| DATE_FORMAT(CURRENT_TIMESTAMP, '%Y %M %D') |
++--------------------------------------------+
+| 2025 February 21st                         |
++--------------------------------------------+
+```
+<br>
+
+
+날짜시간형 데이터는 기간형 수치데이터(INTERVAL)와 덧셈 및 뺄셈을 할 수 있다. 연산 결과로 날짜시간형 데이터가 반환된다.
+
+- MySQL
+   ```SQL
+   mysql> SELECT DATE('2025-02-17') + INTERVAL 1 DAY;
+   +-------------------------------------+
+   | DATE('2025-02-17') + INTERVAL 1 DAY |
+   +-------------------------------------+
+   | 2025-02-18                          |
+   +-------------------------------------+
+   ```
+
+- PostgreSQL
+   ```SQL
+   postgres=# SELECT CURRENT_DATE + INTERVAL '1 DAY' AS result;
+         result        
+   ---------------------
+   2025-02-23 00:00:00
+   ```
+
+`DATEDIFF()` 함수로 날짜형 간의 뺼셈도 할 수 있다.
+
+> **날짜 및 시간 함수 공식 문서**<br>
+> [MySQL](https://dev.mysql.com/doc/refman/8.4/en/date-and-time-functions.html#function_date)
+> [PostgreSQL](https://www.postgresql.org/docs/current/functions-datetime.html)
+>
