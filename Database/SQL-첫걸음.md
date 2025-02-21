@@ -1,24 +1,27 @@
 # SQL 첫걸음
 ## [1장 - 데이터베이스와 SQL]
 ### 1강. 데이터베이스
-- 특정 데이터를 확인하고 싶을 때 간단하게 찾아낼 수 있도록 정리된 형태
-- 하드디스크나 플래시메모리(SSD) 등 비휘발성 저장장치에 저장됨
+특정 데이터를 확인하고 싶을 때 간단하게 찾아낼 수 있도록 정리된 형태로, 하드디스크나 플래시메모리(SSD) 등 비휘발성 저장장치에 저장된다.
 
 #### 데이터베이스 관리 시스템(DBMS; Database Management System)
 데이터베이스를 효율적으로 관리하는 시스템
 
-> 왜 필요한가?
-1. 생산성<br>
-가장 기본적인 데이터 처리, CRUD를 DBMS가 제공함<br>
-<img src="https://github.com/user-attachments/assets/99a70ab8-516d-4f15-bf1d-e7cb6c7d16de" style="width: 400px; height: 200px;">
-1. 기능성<br>
+**> 왜 필요한가?**
+1. **생산성**<br>
+가장 기본적인 데이터 처리나 CRUD를 DBMS가 제공한다. 
+<br>
+<img src="assets/book-sql-first-step/1-6.jpeg" style="width: 400px; height: 200px;">
 
-   <img src="https://github.com/user-attachments/assets/205e4748-37f3-43f7-bccc-31da3edc219f" style="width: 400px; height: 200px;">
-1. 신뢰성<br>
-대규모 데이터베이스의 경우, 여러 대의 하드웨어를 구성하여 신뢰성을 높임 + 성능 향상
-   > 일부 DBMS는 컴퓨터를 여러 대 두고, 소프트웨어를 통해 확장성(Scalability)과 부하 분산(Load Balancing)을 구현함.<br> 이를 보통 ‘클러스터 구성’ 또는 ‘스케일 아웃’이라 부름.
+1. **기능성**<br>
+복수의 사용자의 요청에 대응하거나, 대용량의 데이터를 저장하고 고속으로 검색하는 기능을 제공한다. 또한 데이터베이스 관리 기능을 유저가 확장할 수도 있어 유연한 개발이 가능하다. 이와 같은 데이터베이스를 다루는 여러 가지 기능을 DBMS가 제공한다.<br>
+   <img src="assets/book-sql-first-step/1-7.jpeg" style="width: 400px; height: 200px;">
+
+1. **신뢰성**<br>
+대규모 데이터베이스의 경우, 여러 대의 하드웨어를 구성하여 신뢰성을 높이고 성능을 향상시킬 수 있다.
    
-   export, import 를 통한 간단한 백업 가능
+   > 일부 DBMS는 컴퓨터를 여러 대 두고, 소프트웨어를 통해 확장성(Scalability)과 부하 분산(Load Balancing)을 구현한다. 이를 보통 ‘클러스터 구성’ 또는 ‘스케일 아웃’이라 부른다.
+   
+   또한 `export`, `import` 를 통한 간단한 백업이 가능핟.
 
 #### SQL
 - RDBMS의 데이터를 관리하기 위한 언어
@@ -70,22 +73,23 @@
 
 ### 3강. 데이터베이스 서버
 #### RDBMS의 클라이언트/서버
-- RDBMS는사용자 별로 데이터베이스 접근을 제한할 수 있기 때문에, 사용자 인증이 필요함
-  - 사용자 ID와 비밀번호로 실행<br>
+RDBMS는사용자 별로 데이터베이스 접근을 제한할 수 있기 때문에, 사용자 인증이 필요하다. 일반적으로 사용자 ID와 비밀번호로 인증한다.
 
-   <img src="https://github.com/user-attachments/assets/b9700caf-50e3-44c7-9d82-2b4b04ab3837" style="width: 400px; height: 200px;">
+<img src="assets/book-sql-first-step/1-23.jpeg" style="width: 400px; height: 200px;">
 
 <br>
 
-- 루프 백 접속
-  - 클라이언트에섯 서버에 접속 시, 네트워크를 경유해서 PC의 서버로 되돌아오는 형태
-  - PC 한 대로 클라이언트와 서버 모두 실행할 수 있지만 네트워크 기능 필요. 
+#### 루프 백 접속
+클라이언트에서 서버에 접속 시, 네트워크를 경유해서 PC의 서버로 되돌아오는 형태이다. PC 한 대로 클라이언트와 서버 모두 실행할 수 있지만 네트워크 기능이 필요하다.
   
-  <img src="https://github.com/user-attachments/assets/d7998387-d418-4dc9-a6e4-6452e9eb90df" style="width: 400px; height: 200px;">
+<img src="assets/book-sql-first-step/1-29.jpeg" style="width: 400px; height: 200px;">
 
 ---
 
 ## [2장 - 테이블에서 데이터 검색]
+
+<img src="assets/book-sql-first-step/2-10.jpeg" style="width: 400px; height: 200px;">
+
 ### 검색
   ```SQL
   SELECT * FROM 테이블명;
@@ -93,9 +97,7 @@
 
 > 예약어와 데이터베이스 객체명은 대소문자를 구별하지 않는다.
 
-<img src="https://github.com/user-attachments/assets/2093ddfd-1706-4267-a46d-86a550c56b3f" style="width: 400px; height: 200px;">
-
-<br>
+---
 
 #### 테이블 구조 참조하기
   - MySQL
@@ -107,24 +109,26 @@
     \d 테이블명;
     ```
 
+---
+
 #### 자료형
 1. INTEGER 형<br>
-   정수값을 저장할 수 있는 자료형.
+   : 정수값을 저장할 수 있는 자료형.
 2. CHAR 형<br>
-   문자열을 저장할 수 있는 자료형.<br>
+   : 문자열을 저장할 수 있는 자료형.<br>
    언제나 고정된 길이로 데이터가 저장. 즉, 고정 길이 문자열
    따라서 최대 길이보다 작은 문자열 저장 시, 공백 문자로 나머지를 채운 후 저장하게 됨.
 3. VARCHAR 형<br>
-   문자열을 저장할 수 있는 자료형.<br>
+   : 문자열을 저장할 수 있는 자료형.<br>
    데이터 크기에 맞춰 저장공간의 크기 변경됨. 가변 길이 문자열
 4. DATE 형<br>
-   날짜값을 저장할 수 있는 자료형
+   : 날짜값을 저장할 수 있는 자료형
 5. TIME 형<br>
-   시간을 저장할 수 있는 자료형
+   : 시간을 저장할 수 있는 자료형
 
-<img src="https://github.com/user-attachments/assets/46c5c2f0-a8ee-436c-8bf6-485a31af8c86" style="width: 300px; height: 180px;">
+<img src="assets/book-sql-first-step/2-16.jpeg" style="width: 300px; height: 180px;">
 
-<br>
+---
 
 ### 검색 조건 지정하기
   ```SQL
@@ -133,7 +137,7 @@
   - 열 선택은 SELECT 구
   - 행 선택은 WHERE 구
 
-<br>
+---
 
 ### 패턴 매칭에 의한 검색
 #### 패턴 매칭 / 부분 검색
@@ -158,8 +162,9 @@
 SELECT 열명 FROM 테이블명 WHERE 조건식 ORDER BY 열명 [ASC(default) | DESC]
 ```
 `ORDER BY` 구를 통해 검색 결과의 행 순서를 바꿀 수 있다.<br>
-`ORDER BY` 구를 따로 지정하지 않는 경우, 데이터베이스 내부에 저장된 순서대로 반환된다.<br>
-기본 정렬방법은 오름차순(`ASC`)이며, 열명 뒤에 `DESC` 기입 시 내림차순 정렬된다. 
+기본 정렬방법은 오름차순(`ASC`)이며, 열명 뒤에 `DESC` 기입 시 내림차순 정렬된다. <br>
+`ORDER BY` 구를 따로 지정하지 않으면 일반적으로 데이터베이스 내부에 저장된 순서대로 출력되지만, 이마저도 일정하지 않다. 즉, `ORDER BY` 구 생략 시, 데이터 출력 순서는 데이터베이스 서버의 당시 상황에 따라 결정된다.
+<br>
 
 `ORDER BY`는 테이블에 영향을 주지 않는다. 즉, 서버에 클라이언트로 행 순서를 바꾸어 결과를 반환하는 것뿐, 저장장치에 저장된 데이터의 행 순서를 변경하는 것은 아니다.
 
@@ -216,3 +221,48 @@ mysql> SELECT * FROM order_sample ORDER BY char_col;
 +---------+----------+
 ```
 
+#### 복수의 열을 지정해서 정렬하기
+```sql
+SELECT 열명 FROM 테이블명 WHERE 조건식
+ORDER BY 열명1 [ASC|DESC], 열명2 [ASC|DESC] ...
+```
+
+
+
+`NULL`은 데이터베이스 제품에 따라서 기준이 다르다. 특성상 대소비교를 할 수 없기에, ‘특정 값보다 큰 값‘ 또는 ’특정 값보다 작은 값‘ 두 가지로 나뉜다. 즉, `ORDER BY`로 지정한 열에서 `NULL` 값을 가지는 행은 가장 먼저 표시되거나 가장 나중에 표시된다. 예를 들어, MySQL의 경우는 `NULL` 값을 가장 작은 값으로 취급하고, PostgreSQL은 가장 큰 값으로 취급한다.
+
+---
+
+### 결과 행 제한하기
+```sql
+SELECT 열명 FROM 테이블명 LIMIT 행수 [OFFSET 시작행]
+```
+
+`LIMIT` 구를 사용해 표시할 행 수를 제한할 수 있다. `SELECT` 명령의 마지막에 지정해서 사용한다.
+
+`WHERE` 을 사용해서 `LIMIT`과 동일한 결과를 얻을 수 있다. 다만 두 절은 기능과 내부처리 순서가 전혀 다르다.
+
+이때 주의해야할 점은 `LIMIT` 구는 표준 SQL이 아니다. MySQL과 PostgreSQL에서만 사용 가능하다. 
+SQL Server은 `TOP`을, Oracle은 `ROWNUM`이라는 열을 사용해 행을 제한할 수 있다.
+- LIMIT
+  ```sql
+  SELECT * FROM sample LIMIT 3;
+  ```
+- TOP
+  ```sql
+  SELECT TOP 3 * FROM sample;
+  ```
+- ROWNUM
+  ```sql
+  SELECT * FROM sample WHERE ROWNUM <= 3;
+  ```
+
+<br>
+
+#### 오프셋 지정
+
+웹 시스템에서는 클라이언트의 브라우저를 통해 페이지 단위로 화면에 표시할 내용을 처리한다. 대량의 데이터를 하나의 페이지에 표시하는 것은 기능적으로도 속도 측면에서도 효율적이지 못하므로 일반적으로 페이지 나누기(pagination) 기능을 사용한다.
+
+<img src="assets/book-sql-first-step/3-pagination.jpeg" style="width: 200px; height:400px;">
+
+몇번째 행부터 `LIMIT` 행 수만큼 출력할 것인지를 나타낼 때, `OFFSET`으로 몇번째 행부터를 나타낸다. `OFFSET`은 생략 가능하며 기본값은 0이다.
