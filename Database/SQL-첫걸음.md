@@ -2,39 +2,40 @@
 
 <!-- TOC -->
 
-- [[1장 - 데이터베이스와 SQL]](#1%EC%9E%A5---%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%99%80-sql)
-	- [데이터베이스](#%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4)
-		- [데이터베이스 관리 시스템DBMS; Database Management System](#%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EA%B4%80%EB%A6%AC-%EC%8B%9C%EC%8A%A4%ED%85%9Cdbms-database-management-system)
-		- [SQL](#sql)
-	- [다양한 데이터베이스](#%EB%8B%A4%EC%96%91%ED%95%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4)
-		- [관계형 데이터베이스 RDB; Relational Database](#%EA%B4%80%EA%B3%84%ED%98%95-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-rdb-relational-database)
-		- [데이터베이스 종류](#%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%A2%85%EB%A5%98)
-		- [RDBMS 종류](#rdbms-%EC%A2%85%EB%A5%98)
-	- [데이터베이스 서버](#%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%84%9C%EB%B2%84)
-		- [RDBMS의 클라이언트/서버](#rdbms%EC%9D%98-%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8%EC%84%9C%EB%B2%84)
-		- [루프 백 접속](#%EB%A3%A8%ED%94%84-%EB%B0%B1-%EC%A0%91%EC%86%8D)
-- [[2장 - 테이블에서 데이터 검색]](#2%EC%9E%A5---%ED%85%8C%EC%9D%B4%EB%B8%94%EC%97%90%EC%84%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EA%B2%80%EC%83%89)
-	- [검색](#%EA%B2%80%EC%83%89)
-		- [테이블 구조 참조하기](#%ED%85%8C%EC%9D%B4%EB%B8%94-%EA%B5%AC%EC%A1%B0-%EC%B0%B8%EC%A1%B0%ED%95%98%EA%B8%B0)
-		- [자료형](#%EC%9E%90%EB%A3%8C%ED%98%95)
-	- [검색 조건 지정하기](#%EA%B2%80%EC%83%89-%EC%A1%B0%EA%B1%B4-%EC%A7%80%EC%A0%95%ED%95%98%EA%B8%B0)
-	- [패턴 매칭에 의한 검색](#%ED%8C%A8%ED%84%B4-%EB%A7%A4%EC%B9%AD%EC%97%90-%EC%9D%98%ED%95%9C-%EA%B2%80%EC%83%89)
-		- [패턴 매칭 / 부분 검색](#%ED%8C%A8%ED%84%B4-%EB%A7%A4%EC%B9%AD--%EB%B6%80%EB%B6%84-%EA%B2%80%EC%83%89)
-- [[3장 - 정렬과 연산]](#3%EC%9E%A5---%EC%A0%95%EB%A0%AC%EA%B3%BC-%EC%97%B0%EC%82%B0)
-	- [정렬](#%EC%A0%95%EB%A0%AC)
-		- [사전식 순서에서 주의할 점](#%EC%82%AC%EC%A0%84%EC%8B%9D-%EC%88%9C%EC%84%9C%EC%97%90%EC%84%9C-%EC%A3%BC%EC%9D%98%ED%95%A0-%EC%A0%90)
-		- [복수의 열을 지정해서 정렬하기](#%EB%B3%B5%EC%88%98%EC%9D%98-%EC%97%B4%EC%9D%84-%EC%A7%80%EC%A0%95%ED%95%B4%EC%84%9C-%EC%A0%95%EB%A0%AC%ED%95%98%EA%B8%B0)
-	- [결과 행 제한하기](#%EA%B2%B0%EA%B3%BC-%ED%96%89-%EC%A0%9C%ED%95%9C%ED%95%98%EA%B8%B0)
-		- [오프셋 지정](#%EC%98%A4%ED%94%84%EC%85%8B-%EC%A7%80%EC%A0%95)
-	- [수치 연산](#%EC%88%98%EC%B9%98-%EC%97%B0%EC%82%B0)
-		- [사칙연산](#%EC%82%AC%EC%B9%99%EC%97%B0%EC%82%B0)
-		- [반올림함수: ROUND](#%EB%B0%98%EC%98%AC%EB%A6%BC%ED%95%A8%EC%88%98-round)
-	- [문자열 연산](#%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%97%B0%EC%82%B0)
-		- [문자열 결합](#%EB%AC%B8%EC%9E%90%EC%97%B4-%EA%B2%B0%ED%95%A9)
-		- [SUBSTRING](#substring)
-		- [TRIM](#trim)
-		- [CHARACTER_LENGTH](#character_length)
-	- [날짜 연산](#%EB%82%A0%EC%A7%9C-%EC%97%B0%EC%82%B0)
+- [SQL 첫걸음](#sql-%EC%B2%AB%EA%B1%B8%EC%9D%8C)
+	- [[1장 - 데이터베이스와 SQL]](#1%EC%9E%A5---%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%99%80-sql)
+		- [데이터베이스](#%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4)
+			- [데이터베이스 관리 시스템DBMS; Database Management System](#%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EA%B4%80%EB%A6%AC-%EC%8B%9C%EC%8A%A4%ED%85%9Cdbms-database-management-system)
+			- [SQL](#sql)
+		- [다양한 데이터베이스](#%EB%8B%A4%EC%96%91%ED%95%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4)
+			- [관계형 데이터베이스 RDB; Relational Database](#%EA%B4%80%EA%B3%84%ED%98%95-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-rdb-relational-database)
+			- [데이터베이스 종류](#%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%A2%85%EB%A5%98)
+			- [RDBMS 종류](#rdbms-%EC%A2%85%EB%A5%98)
+		- [데이터베이스 서버](#%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%84%9C%EB%B2%84)
+			- [RDBMS의 클라이언트/서버](#rdbms%EC%9D%98-%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8%EC%84%9C%EB%B2%84)
+			- [루프 백 접속](#%EB%A3%A8%ED%94%84-%EB%B0%B1-%EC%A0%91%EC%86%8D)
+	- [[2장 - 테이블에서 데이터 검색]](#2%EC%9E%A5---%ED%85%8C%EC%9D%B4%EB%B8%94%EC%97%90%EC%84%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EA%B2%80%EC%83%89)
+		- [검색](#%EA%B2%80%EC%83%89)
+			- [테이블 구조 참조하기](#%ED%85%8C%EC%9D%B4%EB%B8%94-%EA%B5%AC%EC%A1%B0-%EC%B0%B8%EC%A1%B0%ED%95%98%EA%B8%B0)
+			- [자료형](#%EC%9E%90%EB%A3%8C%ED%98%95)
+		- [검색 조건 지정하기](#%EA%B2%80%EC%83%89-%EC%A1%B0%EA%B1%B4-%EC%A7%80%EC%A0%95%ED%95%98%EA%B8%B0)
+		- [패턴 매칭에 의한 검색](#%ED%8C%A8%ED%84%B4-%EB%A7%A4%EC%B9%AD%EC%97%90-%EC%9D%98%ED%95%9C-%EA%B2%80%EC%83%89)
+			- [패턴 매칭 / 부분 검색](#%ED%8C%A8%ED%84%B4-%EB%A7%A4%EC%B9%AD--%EB%B6%80%EB%B6%84-%EA%B2%80%EC%83%89)
+	- [[3장 - 정렬과 연산]](#3%EC%9E%A5---%EC%A0%95%EB%A0%AC%EA%B3%BC-%EC%97%B0%EC%82%B0)
+		- [정렬](#%EC%A0%95%EB%A0%AC)
+			- [사전식 순서에서 주의할 점](#%EC%82%AC%EC%A0%84%EC%8B%9D-%EC%88%9C%EC%84%9C%EC%97%90%EC%84%9C-%EC%A3%BC%EC%9D%98%ED%95%A0-%EC%A0%90)
+			- [복수의 열을 지정해서 정렬하기](#%EB%B3%B5%EC%88%98%EC%9D%98-%EC%97%B4%EC%9D%84-%EC%A7%80%EC%A0%95%ED%95%B4%EC%84%9C-%EC%A0%95%EB%A0%AC%ED%95%98%EA%B8%B0)
+		- [결과 행 제한하기](#%EA%B2%B0%EA%B3%BC-%ED%96%89-%EC%A0%9C%ED%95%9C%ED%95%98%EA%B8%B0)
+			- [오프셋 지정](#%EC%98%A4%ED%94%84%EC%85%8B-%EC%A7%80%EC%A0%95)
+		- [수치 연산](#%EC%88%98%EC%B9%98-%EC%97%B0%EC%82%B0)
+			- [사칙연산](#%EC%82%AC%EC%B9%99%EC%97%B0%EC%82%B0)
+			- [반올림함수: ROUND](#%EB%B0%98%EC%98%AC%EB%A6%BC%ED%95%A8%EC%88%98-round)
+		- [문자열 연산](#%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%97%B0%EC%82%B0)
+			- [문자열 결합](#%EB%AC%B8%EC%9E%90%EC%97%B4-%EA%B2%B0%ED%95%A9)
+			- [SUBSTRING](#substring)
+			- [TRIM](#trim)
+			- [CHARACTER_LENGTH](#character_length)
+		- [날짜 연산](#%EB%82%A0%EC%A7%9C-%EC%97%B0%EC%82%B0)
 
 <!-- /TOC -->
 <!-- /TOC -->
@@ -50,11 +51,11 @@
 **> 왜 필요한가?**
 1. **생산성**<br>
 가장 기본적인 데이터 처리나 CRUD를 DBMS가 제공한다.<br>
-   <img src="assets/book-sql-first-step/1-6.jpeg" style="width: 400px; height: 200px;">
+   <img src=" ../assets/book-sql-first-step/1-6.jpeg" style="width: 400px; height: 200px;">
 
 1. **기능성**<br>
 복수의 사용자의 요청에 대응하거나, 대용량의 데이터를 저장하고 고속으로 검색하는 기능을 제공한다. 또한 데이터베이스 관리 기능을 유저가 확장할 수도 있어 유연한 개발이 가능하다. 이와 같은 데이터베이스를 다루는 여러 가지 기능을 DBMS가 제공한다.<br>
-   <img src="assets/book-sql-first-step/1-7.jpeg" style="width: 400px; height: 200px;">
+   <img src=" ../assets/book-sql-first-step/1-7.jpeg" style="width: 400px; height: 200px;">
 
 1. **신뢰성**<br>
 대규모 데이터베이스의 경우, 여러 대의 하드웨어를 구성하여 신뢰성을 높이고 성능을 향상시킬 수 있다.
@@ -115,18 +116,18 @@
 #### RDBMS의 클라이언트/서버
 RDBMS는사용자 별로 데이터베이스 접근을 제한할 수 있기 때문에, 사용자 인증이 필요하다. 일반적으로 사용자 ID와 비밀번호로 인증한다.
 
-<img src="assets/book-sql-first-step/1-23.jpeg" style="width: 400px; height: 200px;">
+<img src=" ../assets/book-sql-first-step/1-23.jpeg" style="width: 400px; height: 200px;">
 
 #### 루프 백 접속
 클라이언트에서 서버에 접속 시, 네트워크를 경유해서 PC의 서버로 되돌아오는 형태이다. PC 한 대로 클라이언트와 서버 모두 실행할 수 있지만 네트워크 기능이 필요하다.
   
-<img src="assets/book-sql-first-step/1-29.jpeg" style="width: 400px; height: 200px;">
+<img src=" ../assets/book-sql-first-step/1-29.jpeg" style="width: 400px; height: 200px;">
 
 ---
 
 ## [2장 - 테이블에서 데이터 검색]
 
-<img src="assets/book-sql-first-step/2-10.jpeg" style="width: 400px; height: 200px;">
+<img src=" ../assets/book-sql-first-step/2-10.jpeg" style="width: 400px; height: 200px;">
 
 ### 검색
   ```SQL
@@ -164,7 +165,7 @@ RDBMS는사용자 별로 데이터베이스 접근을 제한할 수 있기 때�
 5. TIME 형<br>
    : 시간을 저장할 수 있는 자료형
 
-<img src="assets/book-sql-first-step/2-16.jpeg" style="width: 300px; height: 180px;">
+<img src=" ../assets/book-sql-first-step/2-16.jpeg" style="width: 300px; height: 180px;">
 
 ---
 
@@ -301,7 +302,7 @@ SQL Server은 `TOP`을, Oracle은 `ROWNUM`이라는 열을 사용해 행을 제�
 
 웹 시스템에서는 클라이언트의 브라우저를 통해 페이지 단위로 화면에 표시할 내용을 처리한다. 대량의 데이터를 하나의 페이지에 표시하는 것은 기능적으로도 속도 측면에서도 효율적이지 못하므로 일반적으로 페이지 나누기(pagination) 기능을 사용한다.
 
-<img src="assets/book-sql-first-step/3-pagination.jpeg" style="width: 200px; height:400px;">
+<img src=" ../assets/book-sql-first-step/3-pagination.jpeg" style="width: 200px; height:400px;">
 
 몇번째 행부터 `LIMIT` 행 수만큼 출력할 것인지를 나타낼 때, `OFFSET`으로 몇번째 행부터를 나타낸다. `OFFSET`은 생략 가능하며 기본값은 0이다.
 
@@ -385,7 +386,7 @@ CHAR 형(고정길이 문자열형)은 문자열의 길이가 고정되고 남�
 > 문자와 그 문자의 인코딩의 집합<br>
 > character set에 따라서 한 문자가 몇 바이트인지는 다를 수 있다. 따라서 문자열 데이터의 길이는 character set에 따라 다르다.
 > 
-> <img src="assets/book-sql-first-step/3-4-table.jpeg" style="width: 400px; height: 120px;">
+> <img src=" ../assets/book-sql-first-step/3-4-table.jpeg" style="width: 400px; height: 120px;">
 
 ---
 
