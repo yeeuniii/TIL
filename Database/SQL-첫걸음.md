@@ -53,11 +53,11 @@
 **> 왜 필요한가?**
 1. **생산성**<br>
 가장 기본적인 데이터 처리나 CRUD를 DBMS가 제공한다.<br>
-   <img src=" ../assets/book-sql-first-step/1-6.jpeg" style="width: 400px; height: 200px;">
+   <img src="../assets/book-sql-first-step/1-6.jpeg" style="width: 400px; height: 200px;">
 
 1. **기능성**<br>
 복수의 사용자의 요청에 대응하거나, 대용량의 데이터를 저장하고 고속으로 검색하는 기능을 제공한다. 또한 데이터베이스 관리 기능을 유저가 확장할 수도 있어 유연한 개발이 가능하다. 이와 같은 데이터베이스를 다루는 여러 가지 기능을 DBMS가 제공한다.<br>
-   <img src=" ../assets/book-sql-first-step/1-7.jpeg" style="width: 400px; height: 200px;">
+   <img src="../assets/book-sql-first-step/1-7.jpeg" style="width: 400px; height: 200px;">
 
 1. **신뢰성**<br>
 대규모 데이터베이스의 경우, 여러 대의 하드웨어를 구성하여 신뢰성을 높이고 성능을 향상시킬 수 있다.
@@ -118,18 +118,18 @@
 #### RDBMS의 클라이언트/서버
 RDBMS는사용자 별로 데이터베이스 접근을 제한할 수 있기 때문에, 사용자 인증이 필요하다. 일반적으로 사용자 ID와 비밀번호로 인증한다.
 
-<img src=" ../assets/book-sql-first-step/1-23.jpeg" style="width: 400px; height: 200px;">
+<img src="../assets/book-sql-first-step/1-23.jpeg" style="width: 400px; height: 200px;">
 
 #### 루프 백 접속
 클라이언트에서 서버에 접속 시, 네트워크를 경유해서 PC의 서버로 되돌아오는 형태이다. PC 한 대로 클라이언트와 서버 모두 실행할 수 있지만 네트워크 기능이 필요하다.
   
-<img src=" ../assets/book-sql-first-step/1-29.jpeg" style="width: 400px; height: 200px;">
+<img src="../assets/book-sql-first-step/1-29.jpeg" style="width: 400px; height: 200px;">
 
 ---
 
 ## [2장 - 테이블에서 데이터 검색]
 
-<img src=" ../assets/book-sql-first-step/2-10.jpeg" style="width: 400px; height: 200px;">
+<img src="../assets/book-sql-first-step/2-10.jpeg" style="width: 400px; height: 200px;">
 
 ### 검색
   ```SQL
@@ -167,7 +167,7 @@ RDBMS는사용자 별로 데이터베이스 접근을 제한할 수 있기 때�
 5. TIME 형<br>
    : 시간을 저장할 수 있는 자료형
 
-<img src=" ../assets/book-sql-first-step/2-16.jpeg" style="width: 300px; height: 180px;">
+<img src="../assets/book-sql-first-step/2-16.jpeg" style="width: 300px; height: 180px;">
 
 ---
 
@@ -304,7 +304,7 @@ SQL Server은 `TOP`을, Oracle은 `ROWNUM`이라는 열을 사용해 행을 제�
 
 웹 시스템에서는 클라이언트의 브라우저를 통해 페이지 단위로 화면에 표시할 내용을 처리한다. 대량의 데이터를 하나의 페이지에 표시하는 것은 기능적으로도 속도 측면에서도 효율적이지 못하므로 일반적으로 페이지 나누기(pagination) 기능을 사용한다.
 
-<img src=" ../assets/book-sql-first-step/3-pagination.jpeg" style="width: 200px; height:400px;">
+<img src="../assets/book-sql-first-step/3-pagination.jpeg" style="width: 200px; height:400px;">
 
 몇번째 행부터 `LIMIT` 행 수만큼 출력할 것인지를 나타낼 때, `OFFSET`으로 몇번째 행부터를 나타낸다. `OFFSET`은 생략 가능하며 기본값은 0이다.
 
@@ -388,7 +388,7 @@ CHAR 형(고정길이 문자열형)은 문자열의 길이가 고정되고 남�
 > 문자와 그 문자의 인코딩의 집합<br>
 > character set에 따라서 한 문자가 몇 바이트인지는 다를 수 있다. 따라서 문자열 데이터의 길이는 character set에 따라 다르다.
 > 
-> <img src=" ../assets/book-sql-first-step/3-4-table.jpeg" style="width: 400px; height: 120px;">
+> <img src="../assets/book-sql-first-step/3-4-table.jpeg" style="width: 400px; height: 120px;">
 
 ---
 
