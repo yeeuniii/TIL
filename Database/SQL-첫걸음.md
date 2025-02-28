@@ -517,8 +517,9 @@ SELECT
 FROM sample;
 ```
 
-<!-- //todo 3-17
-<img> -->
+<br>
+
+<img src="../assets/book-sql-first-step/3-17.jpeg" style="width: 500px; height: 180px;">
 
 #### 검색 CASE
 `CASE WHEN 조건식 THEN 식 …` 형태
