@@ -27,7 +27,7 @@
 - [REST API](https://github.com/yeeuniii/TIL/blob/main/Network/REST-API.md)
 
 ## OS
--[그림으로 쉽게 배우는 운영체제](https://github.com/yeeuniii/TIL/blob/main/OS/%EA%B7%B8%EB%A6%BC%EC%9C%BC%EB%A1%9C-%EC%89%BD%EA%B2%8C-%EB%B0%B0%EC%9A%B0%EB%8A%94-%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C.md)
+- [그림으로 쉽게 배우는 운영체제](https://github.com/yeeuniii/TIL/blob/main/OS/%EA%B7%B8%EB%A6%BC%EC%9C%BC%EB%A1%9C-%EC%89%BD%EA%B2%8C-%EB%B0%B0%EC%9A%B0%EB%8A%94-%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C.md)
 
 ## TERM
 - [자연어, 기계어, 어셈블리어](https://github.com/yeeuniii/TIL/blob/main/Term/%EC%9E%90%EC%97%B0%EC%96%B4-%EA%B8%B0%EA%B3%84%EC%96%B4-%EC%96%B4%EC%85%88%EB%B8%94%EB%A6%AC%EC%96%B4.md)
