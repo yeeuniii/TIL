@@ -26,7 +26,7 @@ linked list를 사용해서 stack을 구현하려고 했는데
 from linkedlist.linked_list import LinkedList
 ```
 
-<img src="../assets/Python-ModlueNotFoundError.png" style="width: 400px; height: 58px;">
+<img src="../assets/Python-ModlueNotFoundError.png" style="width: 750px; height: 100px;">
 
 난리 뽕짝~~~ 보아하니 같은 경로에 있지 않아서 저렇게 import 해올 수 없는 것 같다.
 
@@ -44,7 +44,7 @@ sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 
 위 코드를 추가해주었더니, LinkedList는 import되는데 linked_list 파일 안에서 Node를 호출하는 게 또 말썽인게야...
 
-<img src="../assets/Python-ModlueNotFoundError2.png" style="width: 400px; height: 70px;">
+<img src="../assets/Python-ModlueNotFoundError2.png" style="width: 750px; height: 140px;">
 
 코드를 완벽히 이해하진 못했지만, 위 코드는 현재 경로의 상위 경로를 추가한 거 같다. 그럼 아예 linkedlist 폴더를 경로에 추가하면 어떨까??
 
