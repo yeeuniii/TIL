@@ -37,7 +37,7 @@ from linkedlist.linked_list import LinkedList
 나는 간단하게 코드를 추가하는 방법으로 해결했다.
 
 ```python
-import sys
+import sys, os
 
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 ```
@@ -53,6 +53,18 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "l
 ```
 
 해결!!
+
+### 정리
+상위 디렉터리를 추가하고 싶으면 
+```python
+sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
+```
+
+동일 선상에 있는 디렉터리를 추가하고 싶으면, 
+```python
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", [디렉터리 이름])))
+```
+
 
 ### 참고
 [[Solved] ModuleNotFoundError in Python.](https://velog.io/@y2k4388/Solved-ModuleNotFoundError-in-Python)
