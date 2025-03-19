@@ -1,4 +1,4 @@
-## ModuleNotFoundError
+## [Solved] ModuleNotFoundError
 
 ### 문제
 자료구조 실습 디렉터리 구조
