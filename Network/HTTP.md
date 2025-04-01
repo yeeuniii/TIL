@@ -41,7 +41,10 @@ WWW를 구성하는 기술에는 다음 세 가지가 제안되었다.
 <img src="../assets/network-HTTP-TCP-connection.png" style="width: 500px; height: 400px;">
 
 #### HTTP/3
-QUIC(Quick UDP Internet Connection)
+`QUIC(Quick UDP Internet Connection)`
+
+- `UDP` 위에서 동작하기에, 속도가 빠르다.
+- 데이터 전달의 신뢰성을 위해 `QUIC`를 통해 중간에 데이터 손실 발생 시 이를 개별적으로 재전송한다.
 
 <img src="../assets/HTTP-2-vs-3.png" style="width: 300px; height: 300px;">
 	
