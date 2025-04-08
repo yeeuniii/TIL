@@ -32,3 +32,6 @@ entityManager.clear();
 ```
 
 생각보다 간단하게 해결된 문제 ㅎㅎ.. 테스트 코드는 짜도짜도 어려운 것 같다..
+
+### 참고
+[ChatGPT 도움](https://chatgpt.com/share/67f4ac89-0e64-8000-8f91-e4cf7155c5ca)
