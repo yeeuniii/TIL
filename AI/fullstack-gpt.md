@@ -261,3 +261,151 @@ chat = ChatOpenAI(
 
 ---
 
+# Chapter4
+
+LangChain의 모듈
+
+모델 I/O
+- 입력(input) : prompt(명령 등을 내리는 곳)
+- 출력(output)
+
+- retrieval : 외부 데이터로 접근하여 이를 모델에 어떻게 제공하는 것에 관한 것
+
+## 4.1 FewShowPromptTemplate
+템플릿 생성의 좋은점
+- 유효성 검사 가능 
+- prompt template을 디스크에 저장하고 load 할 수 있음 (추후 알아볼 것)
+
+<br>
+
+- `Fewshot` : 모델에게 예제를 준다
+  - prompt로 전달하는 것보다 내가 원하는 것을 예제로 보여주는 것이 더 효과적
+- 예를 들어 고객 지원봇을 만든다고 했을 때, 과거의 이력들을 fewshot으로 제공한다면 효과적인 응답을 얻을 수 있음. 이때, 데이터베이스에 저장된 과거 이력들을 이용할 수 있음
+
+```python
+from langchain.prompts import PromptTemplate
+from langchain.prompts.few_show import FewShowPromptTemplate
+
+# examples = [
+# 	{
+# 		"question": "",
+# 		"answer": ""
+# 	}
+# 	# ,... 예제 리스트
+# ]
+
+examples = [
+    {
+        "question": "What do you know about France?",
+        "answer": """
+        Here is what I know:
+        Capital: Paris
+        Language: French
+        Food: Wine and Cheese
+        Currency: Euro
+        """,
+    },
+    {
+        "question": "What do you know about Italy?",
+        "answer": """
+        I know this:
+        Capital: Rome
+        Language: Italian
+        Food: Pizza and Pasta
+        Currency: Euro
+        """,
+    },
+    {
+        "question": "What do you know about Greece?",
+        "answer": """
+        I know this:
+        Capital: Athens
+        Language: Greek
+        Food: Souvlaki and Feta Cheese
+        Currency: Euro
+        """,
+    },
+]
+
+example_templates = """
+	Human: {question}
+	AI: {answer}
+"""
+example_prompt = PromptTemplate.from_tempate(example_templates)
+
+prompt = FewShowPromptTemplate(
+	example_prompt=example_prompt,
+	examples=examples,
+	suffix="Human: What do you know about {country}?",
+	input_variables=["country"]
+)
+
+prompt.format(country="Germany")
+
+```
+
+- 위와 같이 하면, LangChain이 예제 리스트들을 위 prompt를 사용하여 형식화해줌
+
+## 4.2 FewShotChatMessagePromptTemplate
+
+```python
+from langchain.prompts import ChatPromptTemplate
+from langchain.prompts.few_show import FewShowChatMessagePromptTemplate
+
+examples = [
+    {
+        "country": "France",
+        "answer": """
+        Here is what I know:
+        Capital: Paris
+        Language: French
+        Food: Wine and Cheese
+        Currency: Euro
+        """,
+    },
+    {
+        "country": "Italy",
+        "answer": """
+        I know this:
+        Capital: Rome
+        Language: Italian
+        Food: Pizza and Pasta
+        Currency: Euro
+        """,
+    },
+    {
+        "country": "Greece",
+        "answer": """
+        I know this:
+        Capital: Athens
+        Language: Greek
+        Food: Souvlaki and Feta Cheese
+        Currency: Euro
+        """,
+    },
+]
+
+example_prompt = ChatPromptTemplate.from_message([
+	("human", "What do you know about {question}?"),
+	("ai", "{answer}")
+])
+
+example_prompt = FewShowChatMessagePromptTemplate
+(
+	example_prompt=example_prompt,
+	examples=examples,
+)
+
+final_prompt = ChatPromptTemplate.from_messages([
+	("system", "You are a geography expert"),
+	example_prompt,
+	("human", "What do you know about {country}?")
+])
+```
+
+- 모든 예제를 모델에게 줄 수 없음. 
+- 예제를 선택해야 함. 
+- 왜? 
+  1. 비용이 많이 듦. 많은 텍스트
+  2. 허용하는 범위 존재. 
+
