@@ -12,17 +12,13 @@
 * **성공적인 모델링의 전제:** 비즈니스 요구사항과 소스 데이터에 대한 명확한 파악이 필수적이다.
 * **협업의 중요성:** 모델링 자체는 데이터 엔지니어가 주도하지만, 데이터 거버넌스 담당자 및 해당 비즈니스 분야 전문가(Domain Expert)와의 긴밀한 협업을 통해 설계되어야 한다.
 
-<br>
-
 ---
-
-<br>
 
 ## 개념
 
 ### Star Schema
 
-<img src="../assets/star-schema.png" style="width: 80%; height: 60%">
+<img src="../assets/star-schema.png" style="width: 66%;">
 
 Dimensional Modeling을 관계형 데이터베이스(RDBMS)에 물리적으로 구현한 형태를 말한다.
 
@@ -72,16 +68,13 @@ Dimensional Modeling을 관계형 데이터베이스(RDBMS)에 물리적으로 �
 * **Dimension 속성 추가:** 기존 Dimension에 새로운 그룹화 기준을 쉽게 추가할 수 있다.
 * **Grain의 세분화:** 기존 분석 환경의 컬럼명을 유지하면서 밑단의 Fact 테이블을 더 상세한 Grain으로 교체하여, 무중단으로 상세 드릴다운(Drill-down) 분석 환경을 제공할 수 있다.
 
-<br>
 
 ---
-
-<br>
 
 
 ## 실무 적용
 
-### Bus Matrix
+### Bus Matrix 설계
 
 |  | **A. User Daily Activity** | **B. User Hourly Activity** | **C. User Level Progression** | **D. User Stage Play Daily** |
 | --- | --- | --- | --- | --- |
@@ -89,7 +82,7 @@ Dimensional Modeling을 관계형 데이터베이스(RDBMS)에 물리적으로 �
 | **Business Process** | 오늘 몇 명 설치/활동? D7 잔존? PU/Non-PU 분포? | 시간대별 설치/활동 트래픽 분포? | 분기 코호트가 레벨 N에서 몇 % 이탈? | 스테이지별 난이도/이탈/수익성 지표는? |
 | **Grain key** | (logdate, repoid, idfv) | (logdate, hour, repoid, idfv) | (repoid, idfv, global_level) | (logdate, repoid, idfv, stage) |
 | **Dimension (inline)** | install_date, installversion, gameversion, platform, country | install_date, installversion, gameversion, platform, country | stage, mode, package, level_no, level_label, install_date, installversion | mode, package, level_no, level_label, global_level, detail_version, installversion, install_date |
-| **Fact (measures)** | total_play_time_sec, daily_purchase_amount, cumulative_purchase_amount_eod, is_pu | is_install_hour | cumulative_purchase_amount_at_first_reach, is_pu_at_first_reach, first_reached_at | **활동**: play/clear/fail/cancel/retry_session_cnt · **결과**: tight_win/near_miss/far_miss/continue/out_of_moves_cnt · **시간**: sum_(play/clear/fail)_time_sec · **품질**: sum_(win/lose)_narrowness, sum_used_moves · **수익**: paid_item_cnt, is_pu_at_play |
+| **Fact (measures)** | total_play_time_sec, daily_purchase_amount, cumulative_purchase_amount_eod, is_pu | is_install_hour | cumulative_purchase_amount_at_first_reach, is_pu_at_first_reach, first_reached_at | **활동**: play/clear/fail/cancel/retry_session_cnt<br> **결과**: tight_win/near_miss/far_miss/continue/out_of_moves_cnt<br> **시간**: sum_(play/clear/fail)_time_sec<br>**품질**: sum_(win/lose)_narrowness, sum_used_moves<br> **수익**: paid_item_cnt, is_pu_at_play |
 
 ### Dimension 테이블 미분리 이유
 
@@ -134,3 +127,9 @@ silver 와 gold 를 구분하는 본질적 기준은 **"데이터 자체의 신�
 2. Dimension 연결 추가 — Grain 그대로, 새 분석 축만 확장
 3. Dimension 속성 추가 — 그룹화 기준만 추가
 4. Grain 세분화 — 일별 → 시간별 drill-down -->
+
+
+## 참고
+https://www.kimballgroup.com/data-warehouse-business-intelligence-resources/kimball-techniques/dimensional-modeling-techniques/   
+[[velog] Kimball 방식의 데이터 모델링](https://velog.io/@qufrud95/Kimball%EC%9D%98-%EC%B0%A8%EC%9B%90-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%AA%A8%EB%8D%B8%EB%A7%81)
+
